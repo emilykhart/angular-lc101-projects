@@ -4,6 +4,13 @@
         <li *ngFor = 'let chore of chores'>{{chore}}</li>
     </ul>
 </div>
+<div *ngIf = "chores.length === 0; else allowance">
+    {{targetImage}}
+</div>
+<ng-template #allowance>
+    <p>No Allowance Yet</p>
+</ng-template>
+<!-- <p *ngIf = "chores.length < finishedChores.length">Work Harder!</p> -->
 <hr>
 <div class="doneChores">
     <h3>Done Chores</h3>
